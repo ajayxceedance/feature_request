@@ -28,7 +28,7 @@ $ cd feature_request
 
 # create enviorment and activate it
 $ virtualenv venv
-$ source venv/Script/activate
+$ source venv/Scripts/activate
  
 # Install the requirements
 $ pip install -r requirements.txt
