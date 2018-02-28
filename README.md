@@ -21,7 +21,7 @@ To get up and running, simply do the following:
 
 First Clone Project on your Local System:
 
-$ git clone https://python-test-project.visualstudio.com/_git/testpythong331
+$ git clone https://github.com/ajayxceedance/feature_request.git
 
 # Go to Project Directory
 $ cd feature_request
