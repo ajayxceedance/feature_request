@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.headercolor{
+  background-color: #060629
+}
+</style>
+<!--side menu section ends here-->
+<div id="main" class="side-main">
+ <!-- modal for add request-->
+ <div id="add_feature" class="modal fade feature-modal">
+  <div id="modal-dialog" class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Request</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+          <select style="
+          width: 250px;
+          " id="selectclient">
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select style="
+        width: 250px;
+        " id="selectproduct">
+      </select>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+      <label>Request Title</label>
+      <input type="text" class="form-control" id="title">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Request Description</label>
+      <textarea class="form-control" id="desc"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="usr">Request Priority</label>
+      <input type="text" class="form-control" id="priority">
+    </div>  
+
+    <div class="form-group">
+      <label>Select Date: </label>
+        <input type="text" id="dt" placeholder="Target Date" class="form-control">
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submit()">Submit</button>
+  </div>
+</div>
+</div>
+</div>
+<!-- ends here-->
+<!-- header section starts from here-->
+<header>     
+  <div class="logo-section"><img src="../static/img/logo.png" width="100%"></div>
+</header>
+<!-- header section ends here-->
+<div class="mainpanel">
+  <div class="content-section">
+   <div class="table-header">
+    <div class="row">
+
+     <div class="col-xs-12 col-sm-4 col-md-4"><button class="btn btn-1" data-toggle="modal" data-target="#add_feature"><i  class="fa fa-plus" aria-hidden="true"></i>Add Request</button></div>
+     <div class="clearfix"></div>
+   </div>
+ </div>
+ <div class="table-responsive">
+  <table id="request_list" class="table table-striped" cellspacing="0" width="100%">
+   <thead>
+    <tr>
+      <th class="headercolor">Client Name</th>
+      <th class="headercolor">Product Name</th>
+      <th class="headercolor">Request Title</th>
+      <th class="headercolor">Request Description</th>
+      <th class="headercolor">Target Date</th>
+      <th class="headercolor">Request Priority</th>
+      <th class="headercolor">Status</th>
+    </tr>
+  </thead>
+  <tbody id='table' data-bind="foreach: Requisitions">
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% load static %}  
+<script src="{% static 'js/feature.js'%}"></script>
+{% endblock %}
