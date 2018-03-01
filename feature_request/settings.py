@@ -81,7 +81,6 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 
 WSGI_APPLICATION = 'feature_request.wsgi.application'

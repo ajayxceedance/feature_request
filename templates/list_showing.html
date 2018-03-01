@@ -5,6 +5,7 @@
   background-color: #060629
 }
 </style>
+
 <!--side menu section ends here-->
 <div id="main" class="side-main">
  <!-- modal for add request-->
@@ -17,49 +18,48 @@
         <h4 class="modal-title">Add Request</h4>
       </div>
       <div class="modal-body">
+		<span class='errorstyle' data-bind=value.error-add></span>
         <div>
           <select style="
           width: 250px;
-          " id="selectclient">
+          " id="selectclient" data-bind="options:client, optionsValue:'id', optionsText:'name',value:c_id,  optionsCaption: 'Select Client'">
         </select>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select style="
         width: 250px;
-        " id="selectproduct">
+        " id="selectproduct" data-bind="options:product, optionsValue:'id', optionsText:'product_name',value:p_id,  optionsCaption: 'Select Product'">
       </select>
     </div>
     <br><br>
 
     <div class="form-group">
       <label>Request Title</label>
-      <input type="text" class="form-control" id="title">
+      <input type="text" class="form-control" id="title" data-bind="value:title">
     </div>
     <div class="form-group">
       <label for="pwd">Request Description</label>
-      <textarea class="form-control" id="desc"></textarea>
+      <textarea class="form-control" id="desc" data-bind="value:description"></textarea>
     </div>
     <div class="form-group">
       <label for="usr">Request Priority</label>
-      <input type="text" class="form-control" id="priority">
+      <input type="text" class="form-control" id="priority" data-bind="value:req_priority">
     </div>  
 
     <div class="form-group">
       <label>Select Date: </label>
-        <input type="text" id="dt" placeholder="Target Date" class="form-control">
+        <input type="text" id="dt" placeholder="Target Date" class="form-control" data-bind="value:t_date">
     </div>
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submit()">Submit</button>
+    <button type="button" class="btn btn-default" data-bind="click:submit">Submit</button>
   </div>
 </div>
 </div>
 </div>
 <!-- ends here-->
 <!-- header section starts from here-->
-<header>     
   <div class="logo-section"><img src="../static/img/logo.png" width="100%"></div>
-</header>
 <!-- header section ends here-->
 <div class="mainpanel">
   <div class="content-section">
@@ -83,9 +83,17 @@
       <th class="headercolor">Status</th>
     </tr>
   </thead>
-  <tbody id='table' data-bind="foreach: Requisitions">
-
-  </tbody>
+  <tbody data-bind="foreach: request_list">
+	<tr>
+		<td data-bind="text: req_title"></td>
+		<td data-bind="text: req_title"></td>
+		<td data-bind="text: req_title"></td>
+		<td data-bind="text: req_description"></td>
+		<td data-bind="text: target_date"></td>
+		<td data-bind="text: req_priority"></td>
+		<td data-bind="text: status"></td>
+	</tr>
+ </tbody>
 </table>
 </div>
 </div>
@@ -93,5 +101,6 @@
 </div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 {% load static %}  
+<script src="{% static 'js/knockout.validation.js'%}"></script>
 <script src="{% static 'js/feature.js'%}"></script>
 {% endblock %}

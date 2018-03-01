@@ -20,7 +20,7 @@ body {
  .logo-section {
 	width: 195px;
 	padding: 9px 4px;
-	background: #fff;
+	background: transparent;
 	position: relative;
 	left: 60px;
 	float: left;
@@ -450,7 +450,7 @@ body {
 }
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     padding: 0 20px;

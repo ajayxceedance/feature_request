@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 # Add new client.
 class Client_Detail(models.Model):
@@ -16,7 +15,7 @@ class Product_Area(models.Model):
     def __str__(self):
         return self.product_name
 
-# Create new request for perticular client according request priority.
+# Create new request for particular client according request priority.
 class Create_Request(models.Model):
     STATUS_CHOICES = (
                         ('Created', 'Created'),

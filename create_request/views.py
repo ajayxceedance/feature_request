@@ -7,7 +7,7 @@ from rest_framework import status
 import os,logging,datetime
 
 """ 
-fatch the PATH of our base project and join errorLog file with 
+fetch the PATH of our base project and join errorLog file with 
 base project DIR
 """
 
@@ -45,7 +45,6 @@ class CreateRequest(viewsets.ViewSet):
     def create(self, request):
         try:
            data = request.data
-           print(data,type(data))
            title = data.get("title")
            description = data.get("description")
            client_obj = Client_Detail.objects.get(pk=data.get("c_id"))
