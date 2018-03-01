@@ -58,3 +58,5 @@ password - password@111
 ```
 
 #### You can perform all CRUD operations (like add, update, delete) on Client, Product and Feature data.
+
+#### Admin can update the status of the request like In Progress/Completed/Rejected
